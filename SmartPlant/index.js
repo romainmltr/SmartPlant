@@ -8,20 +8,16 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get('/Test', (req, res) => {
+
     res.set('Content-Type', 'text/html');
     res.send('Hello world !!');
 });
 
-// Create Array
-const humidityData = [];
-// Add Data
-app.post('/humidity', (req, res) => {
-    const { humidity } = req.body;
-    humidityData.push(humidity);
 
-    // Send back data
-    res.json(humidityData);
-    console.log(humidityData);
+let humidity = 0;
+app.get('/humidity', (req, res) => {
+    humidity = 12312;
+    res.send({ humidity: humidity });
 });
 
 app.post('/water', (req, res) => {
