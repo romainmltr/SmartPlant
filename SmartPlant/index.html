@@ -1,0 +1,42 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+<form id="temp-form">
+    <button type="submit">Envoyer</button>
+
+</form>
+
+
+<script>
+    const form = document.querySelector('#temp-form');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const temp = document.querySelector('#temp-input').value;
+        const data = {temp: temp};
+        fetch('l/humidity', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Température envoyée avec succès');
+                } else {
+                    console.error('Erreur lors de l\'envoi de la température');
+                }
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+            });
+    });
+
+</script>
+</body>
+</html>
