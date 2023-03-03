@@ -22,25 +22,20 @@ app.post('/humidity', (req, res) => {
 
 app.get('/water', (req, res) => {
     res.send({ water: water });
+    water = 0;
 });
 
 
 app.post('/water', (req, res) => {
     const { state } = req.body;
 
-    // Activez
     if (state) {
         water = 1;
-        // Code pour activer l'eau
-        console.log("Eau activée " + water);
     } else {
         water = 0;
-        // Code pour désactiver l'eau
-        console.log("Eau désactivée " + water);
     }
 
-    // Renvoyer l'état de l'eau dans la réponse JSON
-    res.json({ water });
+     res.json({ water });
 });
 
 // Listen to port

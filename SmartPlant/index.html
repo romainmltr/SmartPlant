@@ -5,13 +5,21 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <p id="humidity"></p>
-        <p id="water"></p>
-        <button id="relay-button">Activer le relais</button>
+    <p class="font-bold pl-5 pt-5 text-lg mb-12 w-fit" id="logo">Plants.</p>
+    <div class="px-5 flex flex-col items-center text-center gap-10">
+        <div>
+            <img src="img/plant.png" alt="plant" class="">
+        </div>
+        <div>
+            <h2 class="font-bold text-xl">Occupez vous de votre plante</h2>
+            <p>Je suis actuellement à <span id="humidity"></span> d'humidité.</p>
+        </div>
+        <button id="relay-button" class="text-white px-6 rounded-full py-4">Arroser la plante</button>
     </div>
     <script>
         const humidityCtn = document.getElementById('humidity');
@@ -19,19 +27,20 @@
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-                humidityCtn.innerHTML = data.humidity;
+                const humidity = Math.round((data.humidity - 400) / (26000 - 400) * 100);
+                humidityCtn.innerHTML = humidity + '%';
             });
 
-    const relayButton = document.getElementById('relay-button');
-    relayButton.addEventListener('click', () => {
-        fetch('http://localhost:3000/water', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ state: true }) // Ajout de la valeur "state"
+        const relayButton = document.getElementById('relay-button');
+        relayButton.addEventListener('click', () => {
+            fetch('http://localhost:3000/water', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ state: true }) // Ajout de la valeur "state"
+            });
         });
-    });
 
 
 </script>
