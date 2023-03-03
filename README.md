@@ -7,25 +7,27 @@ This project is a smart plan who can give you data for your plant
 
 ## :sparkles: Features ##
 
-:heavy_check_mark: Login & Register Feature ;\
-:heavy_check_mark: Match dashboard;\
-:heavy_check_mark: Team dashboard;\
-:heavy_check_mark: Player dashboard;\
-:heavy_check_mark: Filter by Team & Player;\
-:heavy_check_mark: Router system;\
+:heavy_check_mark: Alert When your plant need water\
+:heavy_check_mark: Give water to your plant ;\
+:heavy_check_mark: Info of humidity ;\
+
 ## :rocket: Technologies ##
+
  - Express Node.js
  - Tailwind CSS 
  - Rasberry Pico Pi 
  - Python  
 
 # Install dependencies
-$ npm i 
+
+$ npm install
 
 # Run the project
+
 $ start index
 
 ## :memo: Author ##
+
 Made with :heart: by 
 <a href="https://github.com/romainmltr" target="_blank">Romain</a>
 <a href="https://github.com/QuentinDrouet" target="_blank">Quentin</a>
