@@ -24,6 +24,7 @@ app.get('/water', (req, res) => {
     res.send({ water: water });
 });
 
+
 app.post('/water', (req, res) => {
     const { state } = req.body;
 

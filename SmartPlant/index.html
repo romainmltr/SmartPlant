@@ -20,6 +20,17 @@
                 console.log(data);
                 humidityCtn.innerHTML = data.humidity;
             });
-    </script>
+
+    const relayButton = document.getElementById('relay-button');
+    relayButton.addEventListener('click', () => {
+        fetch('http://localhost:3000/water', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ state: true }) // Ajout de la valeur "state"
+        });
+    });
+</script>
 </body>
 </html>
