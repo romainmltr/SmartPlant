@@ -32,11 +32,11 @@ app.post('/water', (req, res) => {
     if (state) {
         water = 1;
         // Code pour activer l'eau
-        console.log("Eau activée");
+        console.log("Eau activée " + water);
     } else {
         water = 0;
         // Code pour désactiver l'eau
-        console.log("Eau désactivée");
+        console.log("Eau désactivée " + water);
     }
 
     // Renvoyer l'état de l'eau dans la réponse JSON
