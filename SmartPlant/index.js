@@ -7,33 +7,17 @@ const port = 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
-app.get('/Test', (req, res) => {
-
-    res.set('Content-Type', 'text/html');
-    res.send('Hello world !!');
-});
-
-
 let humidity = 0;
 app.get('/humidity', (req, res) => {
-    humidity = 12312;
     res.send({ humidity: humidity });
 });
 
-app.post('/water', (req, res) => {
-    const { state } = req.body;
+app.post('/humidity', (req, res) => {
+    const { value } = req.body;
 
-    // Activez
-    if (state) {
-        // Code pour activer l'eau
-    } else {
-        // Code pour désactiver l'eau
-    }
-
-    // Renvoyer l'état de l'eau dans la réponse JSON
-    res.json({ state });
+    humidity = value;
+    res.json({ humidity });
 });
-
 
 // Listen to port
 app.listen(port, () => {

@@ -1,42 +1,25 @@
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
-
 <body>
-
-<form id="temp-form">
-    <button type="submit">Envoyer</button>
-
-</form>
-
-
-<script>
-    const form = document.querySelector('#temp-form');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const temp = document.querySelector('#temp-input').value;
-        const data = {temp: temp};
-        fetch('l/humidity', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-            .then(response => {
-                if (response.ok) {
-                    console.log('Température envoyée avec succès');
-                } else {
-                    console.error('Erreur lors de l\'envoi de la température');
-                }
-            })
-            .catch(error => {
-                console.error('Erreur:', error);
+    <div>
+        <p id="humidity"></p>
+        <button id="relay-button">Activer le relais</button>
+    </div>
+    <script>
+        const humidityCtn = document.getElementById('humidity');
+        fetch('http://localhost:3000/humidity')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                humidityCtn.innerHTML = data.humidity;
             });
-    });
-
-</script>
+    </script>
 </body>
 </html>
