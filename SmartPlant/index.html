@@ -12,23 +12,34 @@
 <body>
     <p class="font-bold pl-5 pt-5 text-lg mb-12 w-fit" id="logo">Plants.</p>
     <div class="px-5 flex flex-col items-center text-center gap-10">
-        <div>
+        <div class="relative">
             <img src="img/plant.png" alt="plant" class="">
+            <div id="emoji-ctn">
+                <span id="emoji"></span>
+            </div>
         </div>
         <div>
-            <h2 class="font-bold text-xl">Occupez vous de votre plante</h2>
+            <h2 class="font-bold text-xl mb-5">Occupez vous de votre plante</h2>
             <p>Je suis actuellement à <span id="humidity"></span> d'humidité.</p>
         </div>
         <button id="relay-button" class="text-white px-6 rounded-full py-4">Arroser la plante</button>
     </div>
     <script>
         const humidityCtn = document.getElementById('humidity');
+        const emoji = document.getElementById('emoji');
         fetch('http://localhost:3000/humidity')
             .then(response => response.json())
             .then(data => {
                 console.log(data);
                 const humidity = Math.round((data.humidity - 400) / (26000 - 400) * 100);
                 humidityCtn.innerHTML = humidity + '%';
+                if (humidity < 30) {
+                    emoji.innerHTML = '🥵';
+                } else if (humidity < 60) {
+                    emoji.innerHTML = '🙂';
+                } else {
+                    emoji.innerHTML = '🥰';
+                }
             });
 
         const relayButton = document.getElementById('relay-button');
