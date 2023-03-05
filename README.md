@@ -27,7 +27,7 @@ $ node index.js
 
 $ connect your rasberry
 
-$ pypi-server -p 8080
+/// Run the index.html 
 
 ## :memo: Author ##
 
