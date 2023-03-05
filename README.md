@@ -21,7 +21,9 @@ This project is a smart plan who can give you data for your plant
 # Install dependencies
 
 $ npm install
+
 $ node index.js
+
 $ connect your rasberry
 
 # Run the project
