@@ -3,9 +3,8 @@
 ## :dart: About ##
 
 This project is a smart plant who can give you data for your plant the smiley change when your plant changes emoticon according to its hydration. 
-A lamp lights up when it is full ^^
-
-
+A lamp lights up when it is full ^^ and there is a motor that allows you to pour water for 3 seconds . 
+I hope you will enjoy !!
 
 ## :sparkles: Features ##
 
