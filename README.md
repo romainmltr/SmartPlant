@@ -2,7 +2,9 @@
 
 ## :dart: About ##
 
-This project is a smart plant who can give you data for your plant 
+This project is a smart plant who can give you data for your plant the smiley change when your plant changes emoticon according to its hydration. 
+A lamp lights up when it is full ^^
+
 
 
 ## :sparkles: Features ##
