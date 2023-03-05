@@ -19,7 +19,7 @@ I hope you will enjoy !!
  - Rasberry Pico Pi 
  - Python  
 
-# Install dependencies
+# CMD
 
 $ npm install
 
@@ -27,9 +27,7 @@ $ node index.js
 
 $ connect your rasberry
 
-# Run the project
 
-$ start index
 
 ## :memo: Author ##
 
