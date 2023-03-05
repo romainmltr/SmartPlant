@@ -2,7 +2,7 @@
 
 ## :dart: About ##
 
-This project is a smart plan who can give you data for your plant
+This project is a smart plant who can give you data for your plant 
 
 
 ## :sparkles: Features ##
